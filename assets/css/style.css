@@ -1,4 +1,55 @@
-* {*/
-	border: 2px solid red;
+* {
+    */ border: 2px solid red;
 }
 
+#navbar {
+    background-color: #5388e2;
+}
+
+#logo {
+    font-family: 'Palanquin Dark', sans-serif;
+    color: white;
+    margin-top: 0px;
+    margin-left: 29%;
+    padding: 6% 5px;
+    font-size: 36px;
+    width: 300px;
+}
+
+.input-group {
+    margin-top: 5%;
+    margin-left: -20%;
+    margin-right: 29%;
+}
+
+#buttonsearch {
+    height: 34px;
+    border: none;
+    border-radius: 6px;
+    margin-left: -2px;
+    z-index: 2;
+}
+
+
+.pic {
+    float: left;
+    height:203px;
+    width:305px;
+}
+
+.barinfo {
+    font-size: 20px;
+}
+
+.gameinfo{
+	margin-left:8%;
+	margin-top:1%;
+}
+
+.timezone{
+	display: inline-block;
+}
+
+.time{
+	display: inline-block;
+}
