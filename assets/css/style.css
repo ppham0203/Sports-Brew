@@ -2,3 +2,17 @@
 	border: 2px solid red;
 }
 
+
+
+#map {
+	height: 290px;
+	width: 290px;
+    }
+ 
+
+/* html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+*/
