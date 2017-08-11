@@ -14,7 +14,8 @@ $("#buttonsearch").on("click", function() {
     
   for (var i = 0; i < 20; i++) {
   var newDiv = $("<div class='row'>");
-  var divCol1 = $("<div class='gameinfo' class='col-md-6'>");
+  var divCol1 = $("<div class='gameinfo'>");
+  divCol1.addClass("col-md-6");
   var divCol2 = $("<div class='col-md-6'>");
 
     var name = $("<p class='name'>").text(response._embedded.events[i].name);
@@ -22,7 +23,7 @@ $("#buttonsearch").on("click", function() {
     var time = $("<p class='time'>").text(response._embedded.events[i].dates.start.localTime);
     var timeZone = $("<p class='timezone'>").text("Eastern: " + " ");
     var stadium = $("<p class='venue'>").text(response._embedded.events[i]._embedded.venues[0].name);
-    var newImage1 = $("<img class='pic' src='" + response._embedded.events[i].images[0].url + "'/>");
+    var newImage1 = $("<img class='pic' src='" + response._embedded.events[i].images[4].url + "'/>");
     var url = $();
 
     $(".div").append(newDiv);

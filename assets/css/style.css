@@ -30,26 +30,31 @@
     z-index: 2;
 }
 
+.name {
+    margin-top: 3%;
+}
 
 .pic {
     float: left;
-    height:203px;
-    width:305px;
+    height: 203px;
+    width: 305px;
+    margin-right: 1%;
+    margin-top: -1%;
 }
 
 .barinfo {
     font-size: 20px;
 }
 
-.gameinfo{
-	margin-left:8%;
-	margin-top:1%;
+.gameinfo {
+    margin-left: 8%;
+    margin-top: 1%;
 }
 
-.timezone{
-	display: inline-block;
+.timezone {
+    display: inline-block;
 }
 
-.time{
-	display: inline-block;
+.time {
+    display: inline-block;
 }
