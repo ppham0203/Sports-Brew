@@ -1,5 +1,8 @@
-$("#buttonsearch").on("click", function() {
-  // $("#").empty();
+
+
+
+  function search(){
+    $(".div").empty();
   var userInput = $("#search_key").val().trim();
 
   var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + userInput + "&countryCode=US&apikey=8Tvqs6GD3WAR3yzGQutUM67fbguu78VT";
@@ -43,8 +46,24 @@ console.log(response._embedded.events[i].dates.start.localDate);
 console.log(response._embedded.events[i].dates.start.localTime);
 console.log(timeZone);
 console.log(response._embedded.events[i]._embedded.venues[0].name);
+
+$("input").val("");
 }
 
 });
 
+  }
+
+
+$("#buttonsearch").on("click", search);
+
+$(document).keypress(function(enter) {
+    if (enter.which == 13) {
+      search();
+
+    }
+
   });
+
+
+
