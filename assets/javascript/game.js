@@ -16,6 +16,7 @@ $("#buttonsearch").on("click", function() {
   var newDiv = $("<div class='row'>");
   var divCol1 = $("<div class='gameinfo'>");
   divCol1.addClass("col-md-6");
+  var box = $("<div class='infobox'>");
   var divCol2 = $("<div class='col-md-6'>");
 
     var name = $("<p class='name'>").text(response._embedded.events[i].name);
@@ -24,16 +25,18 @@ $("#buttonsearch").on("click", function() {
     var timeZone = $("<p class='timezone'>").text("Eastern: " + " ");
     var stadium = $("<p class='venue'>").text(response._embedded.events[i]._embedded.venues[0].name);
     var newImage1 = $("<img class='pic' src='" + response._embedded.events[i].images[4].url + "'/>");
-    var url = $();
+    var urlTix = $("<p><a href='" + response._embedded.events[i].url + "'>Get Tickets!</a></p>");
 
     $(".div").append(newDiv);
     newDiv.append(divCol1);
-    divCol1.append(newImage1);
-    divCol1.append(name);
-    divCol1.append(stadium);
-    divCol1.append(date);
-    divCol1.append(timeZone);
-    divCol1.append(time);
+    divCol1.append(box);
+    box.append(newImage1);
+    box.append(name);
+    box.append(stadium);
+    box.append(date);
+    box.append(timeZone);
+    box.append(time);
+    box.append(urlTix);
       
 console.log(response._embedded.events[i].name);
 console.log(response._embedded.events[i].dates.start.localDate);
