@@ -28,7 +28,7 @@
     var timeZone = $("<p class='timezone'>").text("Eastern: " + " ");
     var stadium = $("<p class='venue'>").text(response._embedded.events[i]._embedded.venues[0].name);
     var newImage1 = $("<img class='pic' src='" + response._embedded.events[i].images[4].url + "'/>");
-    var urlTix = $("<p><a href='" + response._embedded.events[i].url + "'>Get Tickets!</a></p>");
+    var urlTix = $("<p><a class='tix' href='" + response._embedded.events[i].url + "'>Get Tickets!</a></p>");
 
     $(".div").append(newDiv);
     newDiv.append(divCol1);

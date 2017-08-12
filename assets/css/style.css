@@ -39,6 +39,7 @@ body {
 
 .name {
     margin-top: 3%;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .pic {
@@ -60,10 +61,12 @@ body {
 
 .timezone {
     display: inline-block;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .time {
     display: inline-block;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .infobox {
@@ -71,4 +74,12 @@ body {
     border: 1.5px solid #5388e2;
     margin: 1.5% 0%;
     background-color: white;
+}
+
+.date{
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.tix{
+	font-family: 'Source Sans Pro', sans-serif;
 }
