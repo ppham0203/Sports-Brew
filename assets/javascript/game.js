@@ -68,6 +68,7 @@ function search() {
             divCol2.append(date);
             divCol2.append(timeZone);
             divCol2.append(time);
+            divCol2.append(urlTix);
             divCol3.append(map);
 
             console.log(response._embedded.events[i].name);
