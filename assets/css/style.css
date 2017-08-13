@@ -16,3 +16,87 @@
         padding: 0;
       }
 */
+=======
+body {
+    background-color: #ccd4e2;
+}
+
+#navbar {
+    background-color: #5388e2;
+    border-bottom:4px solid white;
+    margin-bottom:1%;
+}
+
+#logo {
+    font-family: 'Palanquin Dark', sans-serif;
+    color: white;
+    margin-top: -6px;
+    margin-left: 20%;
+    padding: 6.4% 5px;
+    font-size: 42px;
+    width: 300px;
+    text-shadow: -01px 0 #ccd4e2, 0 1px #ccd4e2, 1px 0 #ccd4e2, 0 -1px #ccd4e2;
+}
+
+.input-group {
+    margin-top: 5%;
+    margin-left: -20%;
+    margin-right: 29%;
+}
+
+#buttonsearch {
+    height: 34px;
+    border: none;
+    border-radius: 6px;
+    margin-left: -2px;
+    z-index: 2;
+}
+
+.name {
+    margin-top: 8%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.pic {
+    float: left;
+    height: 190px;
+    width: 295px;
+    margin-right: 1%;
+    margin-top: 0%;
+}
+
+.barinfo {
+    font-size: 20px;
+}
+
+.gameinfo {
+    margin-left: 8%;
+    margin-top: 1%;
+}
+
+.timezone {
+    display: inline-block;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.time {
+    display: inline-block;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.infobox {
+    padding: 40px;
+    border: 1.5px solid #5388e2;
+    margin: 1.5% 0%;
+    background-color: white;
+    height:290px;
+}
+
+.date{
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.tix{
+	font-family: 'Source Sans Pro', sans-serif;
+}
+>>>>>>> c0d14695dfca00a85fffbc00e1916fcf1140d3c8
