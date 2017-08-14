@@ -2,7 +2,7 @@ function search() {
     $(".div").empty();
     var userInput = $("#search_key").val().trim();
 
-    var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + userInput + "&countryCode=US&apikey=8Tvqs6GD3WAR3yzGQutUM67fbguu78VT";
+    var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + userInput + "&classificationName=sports&countryCode=US&apikey=8Tvqs6GD3WAR3yzGQutUM67fbguu78VT";
 
     //Uses ajax to pull events from TicketMaster API
     $.ajax({
@@ -20,7 +20,7 @@ function search() {
             $(".div").append(newDiv);
             newDiv.append(box);
             box.append("<h2> No results found for '" + userInput + "'.</h2>");
-            box.append("<p> We’re sorry, but we couldn’t find any events for '" + userInput + "'. Please check your spelling and try again. </p>");
+            box.append("<p> We’re sorry, but we couldn’t find any sporting events for '" + userInput + "'. Please check your spelling and try again. </p>");
             return;
         }
 
@@ -77,6 +77,14 @@ function search() {
 
             var time = timeTo12HrFormat(eventTime);
 
+            function dateSort(){
+              var today= Date.now();
+              return today <= response._embedded.events[i].dates.start.localDate;
+              console.log(response._embedded.events[i].dates.start.localDate);
+
+            }
+
+dateSort();
 //For each item of the object creates a repeating box for info
 
             $(".div").append(newDiv);
