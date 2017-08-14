@@ -8,8 +8,8 @@ body {
 
 #navbar {
     background-color: #5388e2;
-    border-bottom:4px solid white;
-    margin-bottom:1%;
+    border-bottom: 4px solid white;
+    margin-bottom: 1%;
 }
 
 #logo {
@@ -38,8 +38,10 @@ body {
 }
 
 .name {
-    margin-top: 8%;
+    margin-top: 3%;
     font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    color: #5388e2;
 }
 
 .pic {
@@ -60,12 +62,10 @@ body {
 }
 
 .timezone {
-    display: inline-block;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
 .time {
-    display: inline-block;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -74,13 +74,13 @@ body {
     border: 1.5px solid #5388e2;
     margin: 1.5% 0%;
     background-color: white;
-    height:290px;
+    height: 290px;
 }
 
-.date{
-	font-family: 'Source Sans Pro', sans-serif;
+.date {
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
-.tix{
-	font-family: 'Source Sans Pro', sans-serif;
+.tix {
+    font-family: 'Source Sans Pro', sans-serif;
 }

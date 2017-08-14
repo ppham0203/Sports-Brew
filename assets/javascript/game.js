@@ -10,7 +10,6 @@ function search() {
     }).done(function(response) {
         console.log(response);
 
-
         for (var i = 0; i < 20; i++) {
             var newDiv = $("<div class='row'>");
             var box = $("<div class='infobox' class='gameinfo'>");
@@ -18,6 +17,7 @@ function search() {
             divCol1.addClass("col-md-4");
             var divCol2 = $("<div class='col-md-4'>");
             var divCol3 = $("<div class='col-md-4' id='map-canvas'>");
+            var eventName = (response._embedded.events[i].name);
             var name = $("<p class='name'>").text(response._embedded.events[i].name);
             var eventDate = (response._embedded.events[i].dates.start.localDate);
             var eventTime = (response._embedded.events[i].dates.start.localTime);
@@ -26,11 +26,11 @@ function search() {
             var newImage1 = $("<img class='pic' src='" + response._embedded.events[i].images[4].url + "'/>");
             var urlTix = $("<p><a class='tix' href='" + response._embedded.events[i].url + "'>Get Tickets!</a></p>");
             var location = (response._embedded.events[i]._embedded.venues[0].name);
-            var map = $('<iframe width="305" height="203" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=' + location + '&key=AIzaSyBbNS_dqTDm6hDfSP6MpPWeiwGJTuo0Qto" allowfullscreen></iframe>');
+            var map = $('<iframe width="305" height="203" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=' + location + 'sportbars&key=AIzaSyBbNS_dqTDm6hDfSP6MpPWeiwGJTuo0Qto" allowfullscreen></iframe>');
 
             var formattedDate = new Date(eventDate);
             var mm = formattedDate.getMonth() + 1;
-            var dd = formattedDate.getDate();
+            var dd = formattedDate.getDate() + 1;
             var yyyy = formattedDate.getFullYear();
             if (dd < 10) {
                 dd = '0' + dd
@@ -42,16 +42,19 @@ function search() {
             var date = $("<p class='date'>").text(formattedDate);
 
             function timeTo12HrFormat(time) {
-               
-                var time_part_array = eventTime.split(":");
 
-                if (time_part_array[0] > 12) {
-                    time_part_array[0] = time_part_array[0] - 12;
+                if (time == undefined) {
+                    return formatted_time = "<p>TBD</p>";
+                } else {
+                    var time_part_array = time.split(":");
+
+                    if (time_part_array[0] > 12) {
+                        time_part_array[0] = time_part_array[0] - 12;
+                        formatted_time = "<p>" + time_part_array[0] + ":" + time_part_array[1] + " " + "Eastern</p>";
+
+                        return formatted_time;
+                    }
                 }
-
-                formatted_time = time_part_array[0] + ":" + time_part_array[1] + " ";
-
-                return formatted_time;
             }
 
             var time = timeTo12HrFormat(eventTime);
@@ -67,7 +70,6 @@ function search() {
             divCol2.append(stadium);
             divCol2.append(date);
             divCol2.append(time);
-            divCol2.append(timeZone);
             divCol2.append(urlTix);
             divCol3.append(map);
 
@@ -76,7 +78,11 @@ function search() {
 
     });
 
+
+
 }
+
+
 
 
 $("#buttonsearch").on("click", search);
