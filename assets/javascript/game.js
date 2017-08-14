@@ -4,13 +4,29 @@ function search() {
 
     var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + userInput + "&countryCode=US&apikey=8Tvqs6GD3WAR3yzGQutUM67fbguu78VT";
 
+    //Uses ajax to pull events from TicketMaster API
     $.ajax({
         url: queryURL,
         methond: "GET"
     }).done(function(response) {
         console.log(response);
 
-        for (var i = 0; i < 20; i++) {
+    //Input user validation
+
+        if (!response || !response._embedded || !response._embedded.events || !response._embedded.events.length) {
+            console.log("hey");
+            var newDiv = $("<div class='row'>");
+            var box = $("<div class='infobox' class='gameinfo'>");
+            $(".div").append(newDiv);
+            newDiv.append(box);
+            box.append("<h2> No results found for '" + userInput + "'.</h2>");
+            box.append("<p> We’re sorry, but we couldn’t find any events for '" + userInput + "'. Please check your spelling and try again. </p>");
+            return;
+        }
+
+        for (var i = 0; i < response._embedded.events.length; i++) {
+
+
             var newDiv = $("<div class='row'>");
             var box = $("<div class='infobox' class='gameinfo'>");
             var divCol1 = $("<div>");
@@ -25,6 +41,8 @@ function search() {
             var stadium = $("<p class='venue'>").text(response._embedded.events[i]._embedded.venues[0].name);
             var newImage1 = $("<img class='pic' src='" + response._embedded.events[i].images[4].url + "'/>");
             var urlTix = $("<p><a class='tix' href='" + response._embedded.events[i].url + "'>Get Tickets!</a></p>");
+
+            //Uses the places library for the google API
             var location = (response._embedded.events[i]._embedded.venues[0].name);
             var map = $('<iframe width="305" height="203" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=' + location + 'sportbars&key=AIzaSyBbNS_dqTDm6hDfSP6MpPWeiwGJTuo0Qto" allowfullscreen></iframe>');
 
@@ -59,12 +77,13 @@ function search() {
 
             var time = timeTo12HrFormat(eventTime);
 
+//For each item of the object creates a repeating box for info
+
             $(".div").append(newDiv);
             newDiv.append(box);
             box.append(divCol1);
             box.append(divCol2);
             box.append(divCol3);
-
             divCol1.append(newImage1);
             divCol2.append(name);
             divCol2.append(stadium);
@@ -75,6 +94,7 @@ function search() {
 
             $("input").val("");
         }
+
 
     });
 
