@@ -3,7 +3,6 @@ var arr = [];
 function search() {
     $(".div").empty();
     var userInput = $("#search_key").val().trim();
-
     var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + userInput + "&classificationName=sports&countryCode=US&apikey=8Tvqs6GD3WAR3yzGQutUM67fbguu78VT";
 
     //Uses ajax to pull events from TicketMaster API
@@ -57,6 +56,7 @@ function search() {
             //Uses the places library for the google API
             var location = (response._embedded.events[i]._embedded.venues[0].name);
             var map = $('<iframe width="305" height="203" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=' + location + 'sportbars&key=AIzaSyBbNS_dqTDm6hDfSP6MpPWeiwGJTuo0Qto" allowfullscreen></iframe>');
+
 
             var formattedDate = new Date(eventDate);
             var mm = formattedDate.getMonth() + 1;
@@ -126,5 +126,6 @@ $(document).keypress(function(enter) {
         search();
 
     }
+ 
 
 });
