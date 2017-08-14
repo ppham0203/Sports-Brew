@@ -1,7 +1,6 @@
 function search() {
     $(".div").empty();
     var userInput = $("#search_key").val().trim();
-
     var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + userInput + "&countryCode=US&apikey=8Tvqs6GD3WAR3yzGQutUM67fbguu78VT";
 
     $.ajax({
@@ -27,6 +26,7 @@ function search() {
             var urlTix = $("<p><a class='tix' href='" + response._embedded.events[i].url + "'>Get Tickets!</a></p>");
             var location = (response._embedded.events[i]._embedded.venues[0].name);
             var map = $('<iframe width="305" height="203" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=' + location + '&key=AIzaSyBbNS_dqTDm6hDfSP6MpPWeiwGJTuo0Qto" allowfullscreen></iframe>');
+
 
             var formattedDate = new Date(eventDate);
             var mm = formattedDate.getMonth() + 1;
@@ -86,5 +86,6 @@ $(document).keypress(function(enter) {
         search();
 
     }
+ 
 
 });
