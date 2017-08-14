@@ -1,3 +1,5 @@
+var arr = [];
+
 function search() {
     $(".div").empty();
     var userInput = $("#search_key").val().trim();
@@ -10,8 +12,17 @@ function search() {
         methond: "GET"
     }).done(function(response) {
         console.log(response);
+        arr = response._embedded.events;
 
-    //Input user validation
+        arr.sort(function compare(a, b) {
+            var dateA = new Date(a.dates.start.localDate);
+            var dateB = new Date(b.dates.start.localDate);
+            return dateA - dateB;
+        });
+
+        console.log(arr);
+
+        //Input user validation
 
         if (!response || !response._embedded || !response._embedded.events || !response._embedded.events.length) {
             console.log("hey");
@@ -41,6 +52,7 @@ function search() {
             var stadium = $("<p class='venue'>").text(response._embedded.events[i]._embedded.venues[0].name);
             var newImage1 = $("<img class='pic' src='" + response._embedded.events[i].images[4].url + "'/>");
             var urlTix = $("<p><a class='tix' href='" + response._embedded.events[i].url + "'>Get Tickets!</a></p>");
+            var youTube = $("<p><a class='highlights' href='https://www.youtube.com/results?search_query=" + response._embedded.events[i].name + "' target='_blank'>Watch Past Highlights!</a></p>");
 
             //Uses the places library for the google API
             var location = (response._embedded.events[i]._embedded.venues[0].name);
@@ -56,7 +68,8 @@ function search() {
             if (mm < 10) {
                 mm = '0' + mm
             };
-            var formattedDate = mm + '/' + dd + '/' + yyyy;
+
+            formattedDate = mm + '/' + dd + '/' + yyyy;
             var date = $("<p class='date'>").text(formattedDate);
 
             function timeTo12HrFormat(time) {
@@ -77,15 +90,7 @@ function search() {
 
             var time = timeTo12HrFormat(eventTime);
 
-            function dateSort(){
-              var today= Date.now();
-              return today <= response._embedded.events[i].dates.start.localDate;
-              console.log(response._embedded.events[i].dates.start.localDate);
-
-            }
-
-dateSort();
-//For each item of the object creates a repeating box for info
+            //For each item of the object creates a repeating box for info
 
             $(".div").append(newDiv);
             newDiv.append(box);
@@ -98,6 +103,7 @@ dateSort();
             divCol2.append(date);
             divCol2.append(time);
             divCol2.append(urlTix);
+            divCol2.append(youTube);
             divCol3.append(map);
 
             $("input").val("");
