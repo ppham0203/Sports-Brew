@@ -61,7 +61,7 @@ function search() {
             //Uses the places library for the google API
             var location = (response._embedded.events[i]._embedded.venues[0].name);
             var mapDiv = $("<div class='mapdiv'>");
-            var map = $('<iframe width="305" height="203" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=' + location + 'sportbars&key=AIzaSyBbNS_dqTDm6hDfSP6MpPWeiwGJTuo0Qto" allowfullscreen></iframe>');
+            var map = $('<iframe width="305" height="203" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=' + encodeURIComponent(location) + 'sportbars&key=AIzaSyBbNS_dqTDm6hDfSP6MpPWeiwGJTuo0Qto" allowfullscreen></iframe>');
             var mapText = $("<p class=maptext><img class='beer' src='https://media.giphy.com/media/s0y0H09jckB5S/giphy-downsized.gif'/>Local Sports Bars</p>");
             var twitter= $("<p><a class='twitter' href='https://twitter.com/search?src=typd&q=" + response._embedded.events[i].name + "' src=typd target='_blank'><img class='twitterpic' src='assets/images/twitter.png'/></a>");
 
