@@ -16,7 +16,7 @@ body {
     font-family: 'Palanquin Dark', sans-serif;
     color: white;
     margin-top: -6px;
-    margin-left: 20%;
+    margin-left: 16%;
     padding: 6.4% 5px;
     font-size: 42px;
     width: 300px;
@@ -40,7 +40,7 @@ body {
 }
 
 .name {
-    margin-top: 2%;
+    margin-top: ;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
     color: #5388e2;
@@ -87,20 +87,28 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-#logolink{
-	color:white;
-	text-decoration: none;
+#logolink {
+    color: white;
+    text-decoration: none;
 }
 
-#logolink:hover{
-	color:white;
-	text-decoration: none;
+#logolink:hover {
+    color: white;
+    text-decoration: none;
 }
 
-#logolink:visited{
-	color:white;
-	text-decoration: none;
+#logolink:visited {
+    color: white;
+    text-decoration: none;
 }
 
 
-
+.maptext {
+    position: absolute;
+    z-index: 100;
+    margin-top: -9%;
+    margin-left: 0%;
+    padding: 1% 4%;
+    background-color: white;
+    color:black;
+}

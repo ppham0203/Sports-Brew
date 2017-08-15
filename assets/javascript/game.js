@@ -11,15 +11,6 @@ function search() {
         methond: "GET"
     }).done(function(response) {
         console.log(response);
-        arr = response._embedded.events;
-
-        arr.sort(function compare(a, b) {
-            var dateA = new Date(a.dates.start.localDate);
-            var dateB = new Date(b.dates.start.localDate);
-            return dateA - dateB;
-        });
-
-        console.log(arr);
 
         //Input user validation
 
@@ -35,6 +26,15 @@ function search() {
         }
 
         for (var i = 0; i < response._embedded.events.length; i++) {
+            arr = response._embedded.events;
+
+            arr.sort(function compare(a, b) {
+                var dateA = new Date(a.dates.start.localDate);
+                var dateB = new Date(b.dates.start.localDate);
+                return dateA - dateB;
+            });
+
+            console.log(arr);
 
 
             var newDiv = $("<div class='row'>");
@@ -55,7 +55,9 @@ function search() {
 
             //Uses the places library for the google API
             var location = (response._embedded.events[i]._embedded.venues[0].name);
+            var mapDiv=$("<div class='mapdiv'>");
             var map = $('<iframe width="305" height="203" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=' + location + 'sportbars&key=AIzaSyBbNS_dqTDm6hDfSP6MpPWeiwGJTuo0Qto" allowfullscreen></iframe>');
+            var mapText=$("<p class=maptext>Local Sports Bars</p>");
 
 
             var formattedDate = new Date(eventDate);
@@ -104,7 +106,9 @@ function search() {
             divCol2.append(time);
             divCol2.append(urlTix);
             divCol2.append(youTube);
-            divCol3.append(map);
+            divCol3.append(mapDiv);
+            mapDiv.append(map);
+            mapDiv.append(mapText);
 
             $("input").val("");
         }
@@ -126,6 +130,6 @@ $(document).keypress(function(enter) {
         search();
 
     }
- 
+
 
 });
