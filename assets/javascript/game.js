@@ -8,6 +8,7 @@ function fullSearch(){
   search();
 }
 
+
 function search() {
     $(".div").empty();
     var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + userInput + "&classificationName=sports&countryCode=US&apikey=8Tvqs6GD3WAR3yzGQutUM67fbguu78VT";
@@ -61,7 +62,8 @@ function search() {
             var location = (response._embedded.events[i]._embedded.venues[0].name);
             var mapDiv = $("<div class='mapdiv'>");
             var map = $('<iframe width="305" height="203" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=' + location + 'sportbars&key=AIzaSyBbNS_dqTDm6hDfSP6MpPWeiwGJTuo0Qto" allowfullscreen></iframe>');
-            var mapText = $("<p class=maptext>Local Sports Bars</p>");
+            var mapText = $("<p class=maptext><img class='beer' src='https://media.giphy.com/media/s0y0H09jckB5S/giphy-downsized.gif'/>Local Sports Bars</p>");
+            var twitter= $("<p><a class='twitter' href='https://twitter.com/search?src=typd&q=" + response._embedded.events[i].name + "' src=typd target='_blank'><img class='twitterpic' src='assets/images/twitter.png'/></a>");
 
             //Anthony
             var formattedDate = new Date(eventDate);
@@ -87,7 +89,7 @@ function search() {
 
                     if (time_part_array[0] > 12) {
                         time_part_array[0] = time_part_array[0] - 12;
-                        formatted_time = "<p>" + time_part_array[0] + ":" + time_part_array[1] + " " + "Eastern</p>";
+                        formatted_time = "<p class='time'>" + time_part_array[0] + ":" + time_part_array[1] + " " + "Eastern</p>";
 
                         return formatted_time;
                     }
@@ -109,6 +111,7 @@ function search() {
             divCol2.append(time);
             divCol2.append(urlTix);
             divCol2.append(youTube);
+            youTube.append(twitter);
             divCol3.append(mapDiv);
             mapDiv.append(map);
             mapDiv.append(mapText);
