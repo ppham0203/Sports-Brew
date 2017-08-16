@@ -9,7 +9,7 @@ body {
 #navbar {
     background-color: #5388e2;
     margin-bottom: -8px;
-
+    margin-left: -16%;
 }
 
 #logo {
@@ -22,8 +22,12 @@ body {
     width: 300px;
     text-shadow: -01px 0 #ccd4e2, 0 1px #ccd4e2, 1px 0 #ccd4e2, 0 -1px #ccd4e2;
     text-decoration: none;
+    margin-left: 33%;
 }
 
+.div {
+    margin-top: 14%;
+}
 
 .input-group {
     margin-top: 4%;
@@ -135,12 +139,15 @@ body {
 #categoriesbox {
     background-color: white;
     margin-bottom: 2%;
+    margin-left: -16%;
+    border-bottom: 2px solid #ccd4e2;
 }
 
 #categories {
     float: left;
     margin-left: 6%;
     width: 100%;
+    margin-left: 13%;
 }
 
 .sports {
@@ -161,6 +168,8 @@ body {
 #footer {
     background-color: #5388e2;
     border-top: 3px solid white;
+    width: 1480px;
+    margin-left: -16%;
 }
 
 .footertext {
@@ -174,4 +183,9 @@ body {
     float: right;
     margin-top: -11%;
     margin-right: 4%;
+}
+
+.fullnav {
+    position: fixed;
+    z-index: 101;
 }

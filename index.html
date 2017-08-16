@@ -13,52 +13,55 @@
 
 <body>
     <div class="container">
-        <div id="navbar" class="row">
-            <div class="col-md-5">
-                <h3 id="logo"><a href="index.html" id="logolink">Sports&Brews</a></h3>
-            </div>
-            <div class="col-md-7">
-                <div class="input-group">
-                    <div class="input-group-btn search-panel">
-                    </div>
-                    <input type="hidden" name="search_param" value="name" id="search_param">
-                    <input type="text" class="form-control" name="q" placeholder="Search events" id="search_key" value="">
-                    <span class="input-group-btn">
+        <div class="fullnav">
+            <div id="navbar" class="row">
+                <div class="col-md-5">
+                    <h3 id="logo"><a href="index.html" id="logolink">Sports&Brews</a></h3>
+                </div>
+                <div class="col-md-7">
+                    <div class="input-group">
+                        <div class="input-group-btn search-panel">
+                        </div>
+                        <input type="hidden" name="search_param" value="name" id="search_param">
+                        <input type="text" class="form-control" name="q" placeholder="Search events" id="search_key" value="">
+                        <span class="input-group-btn">
             <button id="buttonsearch" class="btn" type="submit">Search</button>
             </span>
+                    </div>
+                </div>
+            </div>
+            <div id="categoriesbox" class="row">
+                <div class="col-md-12">
+                    <div id="categories">
+                        <p class="sports" data-name="NFL"><a href="#">NFL</a></p>
+                        <p class="sports" data-name="NBA"><a href="#">NBA</a></p>
+                        <p class="sports" data-name="MLB"><a href="#">MLB</a></p>
+                        <p class="sports" data-name="NHL"><a href="#">NHL</a></p>
+                        <p class="sports" data-name="Soccer"><a href="#">Soccer</a></p>
+                        <p class="sports" data-name="Golf"><a href="#">Golf</a></p>
+                        <p class="sports" data-name="Tennis"><a href="#">Tennis</a></p>
+                        <p class="sports" data-name="Boxing"><a href="#">Boxing</a></p>
+                        <p class="sports" data-name="Volleyball"><a href="#">Volleyball</a></p>
+                        <p class="sports" data-name="College sports"><a href="#">College Sports</a></p>
+                        <p class="sports" data-name="WWE"><a href="#">WWE</a></p>
+                        <p class="sports" data-name="MMA"><a href="#">MMA</a></p>
+                        <p class="sports" data-name="Gymnastics"><a href="#">Gymnastics</a></p>
+                        <p class="sports" data-name="Rugby" id="last"><a href="#">Rugby</a></p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div id="categoriesbox" class="row">
-            <div class="col-md-12">
-                <div id="categories">
-                    <p class="sports" data-name="NFL"><a href="#">NFL</a></p>
-                    <p class="sports" data-name="NBA"><a href="#">NBA</a></p>
-                    <p class="sports" data-name="MLB"><a href="#">MLB</a></p>
-                    <p class="sports" data-name="NHL"><a href="#">NHL</a></p>
-                    <p class="sports" data-name="Soccer"><a href="#">Soccer</a></p>
-                    <p class="sports" data-name="Golf"><a href="#">Golf</a></p>
-                    <p class="sports" data-name="Tennis"><a href="#">Tennis</a></p>
-                    <p class="sports" data-name="Boxing"><a href="#">Boxing</a></p>
-                    <p class="sports" data-name="Volleyball"><a href="#">Volleyball</a></p>
-                    <p class="sports" data-name="College sports"><a href="#">College Sports</a></p>
-                    <p class="sports" data-name="WWE"><a href="#">WWE</a></p>
-                    <p class="sports" data-name="MMA"><a href="#">MMA</a></p>
-                    <p class="sports" data-name="Rugby" id="last"><a href="#">Rugby</a></p>
+            <div class="div">
+                <div w-type="event-discovery" w-tmapikey="8Tvqs6GD3WAR3yzGQutUM67fbguu78VT" w-googleapikey="AIzaSyBbNS_dqTDm6hDfSP6MpPWeiwGJTuo0Qto" w-keyword="" w-theme="simple" w-colorscheme="light" w-width="1150" w-height="600" w-size="20" w-border="0" w-borderradius="4" w-postalcode="" w-radius="61" w-period="month" w-layout="horizontal" w-attractionid="" w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom" w-titlelink="off" w-source="ticketmaster" w-latlong="34.0390107,-118.2672801" w-classificationname="Sports"></div>
+            </div>
+            <script src="https://ticketmaster-api-staging.github.io/products-and-docs/widgets/event-discovery/1.0.0/lib/main-widget.js"></script>
+            <div class="row">
+                <div id="footer" class="col-md-12">
+                    <p class="footertext" style="text-align:center">Copyright of Sports&Brew</p>
+                    <p class="footertext" style="text-align:center">powered by Ligers©</p>
                 </div>
             </div>
         </div>
-        <div class="div">
-            <div w-type="event-discovery" w-tmapikey="8Tvqs6GD3WAR3yzGQutUM67fbguu78VT" w-googleapikey="AIzaSyBbNS_dqTDm6hDfSP6MpPWeiwGJTuo0Qto" w-keyword="" w-theme="simple" w-colorscheme="light" w-width="1150" w-height="600" w-size="20" w-border="0" w-borderradius="4" w-postalcode="" w-radius="61" w-period="month" w-layout="horizontal" w-attractionid="" w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom" w-titlelink="off" w-source="ticketmaster" w-latlong="34.0390107,-118.2672801" w-classificationname="Sports"></div>
-        </div>
-        <script src="https://ticketmaster-api-staging.github.io/products-and-docs/widgets/event-discovery/1.0.0/lib/main-widget.js"></script>
-        <div class="row">
-            <div id="footer" class="col-md-12">
-                <p class="footertext" style="text-align:center">Copyright of Sports&Brews</p>
-                <p class="footertext" style="text-align:center">powered by Ligers©</p>
-            </div>
-        </div>
-    </div>
     </div>
     <script src="https://ticketmaster-api-staging.github.io/products-and-docs/widgets/event-discovery/1.0.0/lib/main-widget.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
