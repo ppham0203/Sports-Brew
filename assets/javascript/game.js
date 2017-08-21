@@ -55,7 +55,7 @@ function search() {
             var timeZone = $("<p class='timezone'>").text("Eastern");
             var stadium = $("<p class='venue'>").text(response._embedded.events[i]._embedded.venues[0].name);
             var newImage1 = $("<img class='pic' src='" + response._embedded.events[i].images[4].url + "'/>");
-            var urlTix = $("<p><a class='tix' href='" + response._embedded.events[i].url + "'>Get Tickets!</a></p>");
+            var urlTix = $("<p><a class='tix' href='" + response._embedded.events[i].url + "' target='_blank'>Get Tickets!</a></p>");
             //Ahmed
             var youTube = $("<p><a class='highlights' href='https://www.youtube.com/results?search_query=" + response._embedded.events[i].name + "' target='_blank'>Watch Past Highlights!</a></p>");
             //Uses the places library for the google API
